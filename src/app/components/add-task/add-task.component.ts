@@ -13,8 +13,7 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
 
   saveTask(title: any, description: any, due_date: any) {
-    const dueDateValue = new Date(due_date.value); // Convert input value to Date object
-    this.taskService.saveTask(title.value, description.value, dueDateValue); // Pass due date as Date object
+    this.taskService.saveTask(title.value, description.value, due_date.value); // Pass due date as Date object
     this.router.navigate(['/home']);
   }
 }

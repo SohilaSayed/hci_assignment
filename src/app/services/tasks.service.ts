@@ -5,23 +5,26 @@ import { Task } from '../interface/task';
   providedIn: 'root',
 })
 export class TasksService {
-  tasks: Task[] = [
-    {
-      title: 'HCI Assignment',
-      description: 'deadline 18/4/2024',
-      due_date: new Date(2024, 3, 18),
-    },
-    {
-      title: 'HCI Task',
-      description: 'deadline 18/4/2024',
-      due_date: new Date(2024, 3, 18),
-    },
-  ];
+  tasks: Task[] = [];
 
-  constructor() {}
+  constructor() {
+    let storedTasks = localStorage.getItem('tasks');
+    if(storedTasks){
+      this.tasks = JSON.parse(storedTasks);
+    }
+    else{
+      this.tasks = [];
+    }
+  }
 
   deleteTask(i: number) {
     this.tasks.splice(i, 1);
+    this.storeTasks();
+  }
+
+  updateTask(id : any,item:any){
+    this.tasks[id] = item;
+    this.storeTasks();
   }
 
   saveTask(title: any, description: any, due_date: any) {
@@ -30,5 +33,10 @@ export class TasksService {
       description: description,
       due_date: due_date,
     });
+    this.storeTasks();
+  }
+
+  storeTasks(){
+    localStorage.setItem('tasks',JSON.stringify(this.tasks))
   }
 }

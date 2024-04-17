@@ -17,7 +17,7 @@
           {{ task.title }}</a
         >
 
-        <button class="edit-button">Edit</button>
+        <button class="edit-button" [routerLink]="['/task', i]">Edit</button>
         <button class="del-button" (click)="deleteTask(i)">Delete</button>
       </li>
     </ul>

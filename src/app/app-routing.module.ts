@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'add-task', component: AddTaskComponent },
   { path: 'task/:id', component: TaskDetailsComponent },
+  { path: 'task', component: TaskDetailsComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

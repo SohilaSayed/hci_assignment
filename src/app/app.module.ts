@@ -8,6 +8,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NotFoundComponent, AddTaskComponent, TaskDetailsComponent],
@@ -16,6 +17,7 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
     AppRoutingModule,
     RouterModule,
     AlertModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
