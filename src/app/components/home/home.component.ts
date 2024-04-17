@@ -18,4 +18,7 @@ export class HomeComponent implements OnInit {
     this.taskService.updateTask(this.taskId,this.task);
     this.router.navigate(['/']);
   }
+  onCheck(i:number) {
+    this.taskService.onCheck(i);
+  }
 }

@@ -1,14 +1,15 @@
 <div class="container">
   <h2 style="text-align: center;">Add a New Task</h2>
   <h4 style="margin-bottom:3px">Name</h4>
-  <input #taskTitle type="text" class="form-control" />
+  <input #taskTitle type="text" class="form-control" required/>
   <h4 style="margin-bottom:3px">Description</h4>
   <textarea #taskDesc class="form-control"></textarea>
   <h4 style="margin-bottom:3px">Due Date</h4>
   <input type="date" #taskDueDate class="form-control" />
+  <input #taskCompleted type="checkbox">
   <button
     class="save-button"
-    (click)="saveTask(taskTitle, taskDesc, taskDueDate)"
+    (click)="saveTask(taskTitle, taskDesc, taskDueDate,taskCompleted)"
   >
     Save
   </button>

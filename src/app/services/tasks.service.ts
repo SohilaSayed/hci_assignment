@@ -21,17 +21,22 @@ export class TasksService {
     this.tasks.splice(i, 1);
     this.storeTasks();
   }
+  onCheck(i: number) {
+    this.tasks[i].is_completed = !this.tasks[i].is_completed;
+    this.storeTasks();
+  }
 
   updateTask(id : any,item:any){
     this.tasks[id] = item;
     this.storeTasks();
   }
 
-  saveTask(title: any, description: any, due_date: any) {
+  saveTask(title: any, description: any, due_date: any,is_completed :any) {
     this.tasks.push({
       title: title,
       description: description,
       due_date: due_date,
+      is_completed
     });
     this.storeTasks();
   }
