@@ -13,10 +13,10 @@
         class="list-group-item"
         *ngFor="let task of taskService.tasks; index as i"
       >
-      <a [routerLink]="['/task', i]" [style.textDecoration]="!task.is_completed ? 'line-through' : 'none'">
+      <a [routerLink]="['/task', i]" [style.textDecoration]="task.is_completed ? 'line-through' : 'none'">
         {{ task.title }}
       </a>
-        <input style="margin-left: 870px;margin-top: 7px;" type="checkbox" (change)="onCheck(i)" >
+        <input style="margin-left: 870px;margin-top: 7px;" type="checkbox" [checked]="task.is_completed" (change)="onCheck(i)" >
 
         <button class="edit-button" [routerLink]="['/task', i]">Edit</button>
         <button class="del-button" (click)="deleteTask(i)">Delete</button>
