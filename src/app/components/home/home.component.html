@@ -16,6 +16,10 @@
       <a [routerLink]="['/task', i]" [style.textDecoration]="task.is_completed ? 'line-through' : 'none'">
         {{ task.title }}
       </a>
+      <p>Description :  {{task.description}} </p>
+      <p>Due Date :  {{task.due_date}} </p>
+      <p>Completed :  {{task.is_completed}} </p>
+     
         <input style="margin-left: 870px;margin-top: 7px;" type="checkbox" [checked]="task.is_completed" (change)="onCheck(i)" >
 
         <button class="edit-button" [routerLink]="['/task', i]">Edit</button>
